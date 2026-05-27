@@ -11,6 +11,5 @@ add_executable(
     src/shell/parser.cpp
     src/shell/commandHandler.cpp
 
-
     src/commands/pwdCommand.cpp
 )
