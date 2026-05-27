@@ -1,6 +1,6 @@
 #pragma once
 
-class PWDCommand
+class HelpCommand
 {
 public:
     void execute();

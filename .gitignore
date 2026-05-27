@@ -1,6 +1,9 @@
 # Build folder
 build/
 
+#bash Script to run the OS
+run.sh
+
 # VS Code settings
 .vscode/
 

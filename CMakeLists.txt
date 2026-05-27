@@ -12,4 +12,7 @@ add_executable(
     src/shell/commandHandler.cpp
 
     src/commands/pwdCommand.cpp
+    src/commands/lsCommand.cpp
+    src/commands/mkdirCommand.cpp
+    src/commands/helpCommand.cpp
 )

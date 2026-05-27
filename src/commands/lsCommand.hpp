@@ -1,6 +1,6 @@
 #pragma once
 
-class PWDCommand
+class LsCommand
 {
 public:
     void execute();

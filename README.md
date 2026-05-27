@@ -1,89 +1,93 @@
-## `README.md`
+# Rudra-OS
 
-````md
-# RudraOS
+> A safe terminal sandbox for learning command-line systems without risking the real machine.
 
-RudraOS is a custom terminal shell written in C++.
+---
 
-The project is focused on learning:
+# Overview
 
-- terminal architecture
-- filesystem operations
-- command parsing
-- shell design
-- interpreter development
+Rudra-OS is a custom terminal environment written in modern C++.
 
-The long-term vision is to evolve RudraOS into:
+Unlike a traditional shell, Rudra-OS operates inside a controlled sandbox filesystem, allowing users to safely experiment with terminal commands, scripting, and operating-system concepts.
 
-- a modular shell
-- a programmable environment
-- a BASIC-like scripting system
+The goal is to create an immersive learning environment where beginners can:
+
+- learn terminal basics
+- understand filesystem navigation
+- practice shell commands
+- explore scripting
+- experiment safely
+
+without damaging their actual operating system.
+
+---
+
+# Core Vision
+
+Rudra-OS is evolving toward:
+
+```text
+Educational Shell
+        +
+Virtual Filesystem
+        +
+Sandboxed Environment
+        +
+Interactive Tutorials
+        +
+Custom Scripting Language
+```
+
+The project is inspired by:
+
+- Unix philosophy
+- retro operating systems
+- shell environments
+- educational sandboxes
+- early BASIC interpreters
+
+---
+
+# Why Rudra-OS Exists
+
+Many beginners avoid learning terminal systems because they fear:
+
+- deleting important files
+- damaging the operating system
+- using dangerous commands
+- breaking configurations
+
+Rudra-OS solves this by creating a completely isolated learning environment.
+
+Users interact only with:
+
+```text
+sandbox/
+```
+
+instead of their real filesystem.
 
 ---
 
 # Current Features
 
-## Implemented Commands
+## Implemented
+
+- terminal shell loop
+- command parser
+- command handler
+- modular architecture
+- pwd command
+- CMake build system
+- Git integration
+
+---
+
+# Planned Features
+
+## Shell Commands
 
 - pwd
-- help
-- exit
-
----
-
-# Project Structure
-
-```text
-src/
-├── commands/
-│   ├── pwdCommand.cpp
-│   └── pwdCommand.hpp
-│
-├── shell/
-│   ├── commandHandler.cpp
-│   ├── commandHandler.hpp
-│   ├── parser.cpp
-│   └── parser.hpp
-│
-└── main.cpp
-```
-````
-
----
-
-# Build Instructions
-
-## Requirements
-
-- C++17
-- CMake 3.10+
-
----
-
-## Build
-
-```bash
-mkdir build
-cd build
-
-cmake ..
-make
-```
-
----
-
-## Run
-
-```bash
-./RudraOs
-```
-
----
-
-# Future Goals
-
-## Shell Features
-
 - ls
 - cd
 - mkdir
@@ -91,133 +95,83 @@ make
 - rm
 - cp
 - mv
+- clear
+- help
 
 ---
 
-## Advanced Features
+## Sandbox Features
 
-- command history
-- aliases
-- colored terminal output
-- scripting support
-- pipes
-- environment variables
+- isolated virtual filesystem
+- protected path validation
+- reset sandbox command
+- safe command execution
 
 ---
 
-## BASIC Interpreter
+## Learning Features
 
-Planned support for:
+- interactive tutorials
+- guided command lessons
+- beginner challenges
+- command explanations
+- practice missions
+
+Example:
+
+```bash
+tutorial ls
+mission 1
+```
+
+---
+
+## Scripting Support
+
+Planned support for a BASIC-inspired scripting language:
 
 ```basic
 LET x = 10
-PRINT x
+
 IF x > 5 THEN
 PRINT "large"
 ENDIF
 ```
 
----
+Future goals:
 
-# Author
-
-Built by Rudrana.
-
-````
-
-# Current Commands
-
-| Command | Status |
-| ------- | ------ |
-| pwd     | ✅     |
-| help    | ❌     |
-| ls      | ❌     |
-| mkdir   | ❌     |
-| touch   | ❌     |
-| rm      | ❌     |
-| cp      | ❌     |
-| mv      | ❌     |
-| cd      | ❌     |
+- variables
+- loops
+- conditions
+- functions
+- script execution
 
 ---
 
-# Known Issues
+# Project Structure
 
-- include path cleanup needed
-- naming convention inconsistent
-- no error handling yet
-- command registration still manual
-
----
-
-# Next Goals
-
-## Immediate
-
-- [ ] implement ls
-- [ ] implement mkdir
-- [ ] implement touch
-- [ ] implement rm
-
----
-
-## Mid-Term
-
-- [ ] implement cd
-- [ ] add command registry
-- [ ] improve parser
-- [ ] support quoted arguments
-
----
-
-## Long-Term
-
-- [ ] build BASIC interpreter
-- [ ] scripting support
-- [ ] process execution
-- [ ] shell variables
-- [ ] pipes and redirection
-
----
-
-# Notes
-
-Current shell is intentionally minimal.
-
-Focus right now:
-
-- architecture clarity
-- modularity
-- filesystem understanding
-- parser fundamentals
-
-```
-
+```text
+Rudra-OS/
+│
+├── sandbox/
+│
+├── src/
+│   ├── core/
+│   ├── commands/
+│   ├── filesystem/
+│   └── main.cpp
+│
+├── build/
+│
+├── README.md
+├── JOURNAL.md
+├── run.sh
+└── CMakeLists.txt
 ```
 
 ---
 
-# Design Philosophy
-
-RudraOS is intentionally being built from scratch without relying heavily on external shell frameworks.
-
-The goal is to understand:
-
-- how terminals work internally
-- how commands are parsed
-- how filesystems are accessed
-- how interpreters are designed
-- how modular systems evolve
-
-The project prioritizes:
-
-- clarity over complexity
-- modularity over shortcuts
-- learning over speed
-
----
-
-# Planned Architecture
+# Architecture
 
 ```text
 User Input
@@ -228,96 +182,158 @@ Parser
     ↓
 Command Handler
     ↓
-Command Modules
+Commands
     ↓
-Filesystem / System APIs
-```
-
-Future architecture:
-
-```text
-Shell
-├── Command System
-├── Filesystem Layer
-├── Process Manager
-├── Scripting Engine
-└── BASIC Interpreter
+Virtual Filesystem
+    ↓
+Sandbox
 ```
 
 ---
 
-# Example Usage
+# Safety Philosophy
+
+Rudra-OS never directly manipulates the user's real filesystem.
+
+All operations are redirected into:
+
+```text
+sandbox/
+```
+
+This allows users to:
+
+- create files
+- delete files
+- navigate directories
+- experiment freely
+
+without harming the host system.
+
+---
+
+# Build Instructions
+
+## Requirements
+
+- C++17+
+- CMake 3.10+
+
+---
+
+## Build & Run
 
 ```bash
-rudra> pwd
-/Users/rudra/Documents/RUDRAOS
+./run.sh
+```
 
-rudra> mkdir test
+Or manually:
 
-rudra> touch hello.txt
+```bash
+mkdir build
+cd build
 
-rudra> ls
-test
-hello.txt
+cmake ..
+make
+
+./RudraOs
 ```
 
 ---
 
-# Learning Goals
+# Development Roadmap
 
-This project is also being used to strengthen understanding of:
+## Phase 1
+
+Core shell infrastructure
+
+- shell loop
+- parser
+- command system
+- filesystem abstraction
+
+---
+
+## Phase 2
+
+Sandbox environment
+
+- virtual filesystem
+- path protection
+- safe operations
+
+---
+
+## Phase 3
+
+Interactive learning
+
+- tutorials
+- challenges
+- beginner guidance
+
+---
+
+## Phase 4
+
+Scripting engine
+
+- BASIC interpreter
+- runtime environment
+- script execution
+
+---
+
+## Phase 5
+
+Advanced systems
+
+- pipes
+- variables
+- aliases
+- package simulation
+- process simulation
+
+---
+
+# Long-Term Vision
+
+Rudra-OS may eventually evolve into:
+
+- browser-based terminal playground
+- educational operating-system simulator
+- cybersecurity training sandbox
+- scripting environment
+- multiplayer learning shell
+
+---
+
+# Learning Objectives
+
+This project is also a deep dive into:
 
 - C++
-- Object-Oriented Design
-- Filesystems
-- Parsing
-- Interpreters
-- Operating System concepts
-- Build Systems (CMake)
-- Git workflow
+- filesystem design
+- interpreters
+- shell architecture
+- operating-system concepts
+- parser design
+- software architecture
+- modular systems
 
 ---
 
-# Development Status
-
-Current version:
+# Status
 
 ```text
-v0.1-prealpha
-```
-
-Current focus:
-
-```text
-Core shell infrastructure
+Version: v0.1-prealpha
+State: Early Foundation Development
 ```
 
 ---
 
-# Future Vision
+# Author
 
-RudraOS may eventually support:
+Built by Rudrana.
 
-- scripting files
-- custom shell language
-- plugin system
-- process execution
-- task automation
-- environment variables
-- piping and redirection
-- configuration files
-- shell themes
-
----
-
-# Inspiration
-
-Inspired by:
-
-- Unix philosophy
-- Bash
-- PowerShell
-- retro operating systems
-- early BASIC interpreters
-- low-level system tooling
-````
+> "Every operating system begins as a blinking cursor and an unreasonable amount of curiosity."
