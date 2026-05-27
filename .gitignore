@@ -1,0 +1,31 @@
+# Build folder
+build/
+
+# VS Code settings
+.vscode/
+
+# macOS junk
+.DS_Store
+
+# Executables
+RudraOs
+
+# CMake generated files
+CMakeCache.txt
+cmake_install.cmake
+Makefile
+
+# CMake folders
+CMakeFiles/
+
+# Logs
+*.log
+
+# Temporary files
+*.tmp
+
+# Object files
+*.o
+
+# Command notes
+CommandList.txt
