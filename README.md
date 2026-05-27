@@ -125,45 +125,6 @@ Built by Rudrana.
 
 ````
 
----
-
-## `JOURNAL.md`
-
-```md
-# RudraOS Development Journal
-
----
-
-# Phase 1
-## Terminal Foundation
-
-### Completed
-
-- [x] Initialized CMake project
-- [x] Created shell loop
-- [x] Added command handler
-- [x] Added parser/tokenizer
-- [x] Added modular command structure
-- [x] Implemented pwd command
-- [x] Added Git repository
-- [x] Added .gitignore
-
----
-
-# Current Architecture
-
-```text
-main.cpp
-    ↓
-CommandHandler
-    ↓
-Parser
-    ↓
-Commands
-````
-
----
-
 # Current Commands
 
 | Command | Status |
@@ -359,3 +320,4 @@ Inspired by:
 - retro operating systems
 - early BASIC interpreters
 - low-level system tooling
+````
