@@ -2,6 +2,7 @@
 #include <string>
 
 #include "shell/commandHandler.hpp"
+#include "commands/historyCommand.hpp"
 
 int main()
 {
@@ -25,6 +26,7 @@ Type 'exit' to quit the shell.
     std::string input;
 
     CommandHandler handler;
+    HistoryCommand history;
 
     while (true)
     {
@@ -32,9 +34,16 @@ Type 'exit' to quit the shell.
         std::cout << "rudra> ";
 
         std::getline(std::cin, input);
+        history.addCommand(input);
 
         if (input == "exit")
             break;
+
+        if (input == "history")
+        {
+            history.show();
+            continue;
+        }
 
         handler.handleCommand(input);
     }

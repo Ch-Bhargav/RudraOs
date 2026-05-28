@@ -15,4 +15,6 @@ add_executable(
     src/commands/lsCommand.cpp
     src/commands/mkdirCommand.cpp
     src/commands/helpCommand.cpp
+    src/commands/clearCommand.cpp
+    src/commands/historyCommand.cpp
 )

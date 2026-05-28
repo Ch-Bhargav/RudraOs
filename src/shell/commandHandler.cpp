@@ -8,6 +8,7 @@
 #include "../commands/lsCommand.hpp"
 #include "../commands/mkdirCommand.hpp"
 #include "../commands/helpCommand.hpp"
+#include "../commands/clearCommand.hpp"
 
 void CommandHandler::handleCommand(const std::string &command)
 {
@@ -40,6 +41,12 @@ void CommandHandler::handleCommand(const std::string &command)
         // Handle help command
         HelpCommand helpCommand;
         helpCommand.execute();
+    }
+    else if (tokens[0] == "clear")
+    {
+        // Handle clear command
+        ClearCommand clearCommand;
+        clearCommand.execute();
     }
     else
     {

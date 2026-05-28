@@ -8,5 +8,7 @@ void HelpCommand::execute()
     std::cout << "  ls    - List files and directories in the current directory" << std::endl;
     std::cout << "  mkdir <folder_name> - Create a new directory with the specified name" << std::endl;
     std::cout << "  help  - Display this help message" << std::endl;
+    std::cout << "  clear - Clear the terminal screen" << std::endl;
+    std::cout << "  history - Show command history" << std::endl;
     std::cout << "  exit  - Exit the shell" << std::endl;
 }
