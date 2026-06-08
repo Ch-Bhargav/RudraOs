@@ -130,3 +130,5 @@ Focus:
 - understanding
 - architecture
 - consistency
+
+Things are chainging
